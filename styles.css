@@ -7,8 +7,8 @@
 
 body {
     /* Background Image Setup */
-    background-color: #1e2a44; /* Dark blue fallback color just in case image fails */
-    background-image: url("5720.jpg");
+    background-color: #1e2a44; 
+    background-image: url("image_0.png"); /* Updated image filename */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -17,8 +17,8 @@ body {
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: flex-end; /* THIS PUSHES THE PANEL TO THE BOTTOM */
-    padding-bottom: 30px; /* Keeps it slightly off the bottom edge */
+    align-items: flex-end; 
+    padding-bottom: 80px; /* INCREASED from 30px to move the panel UP */
     color: #ffffff;
     overflow: hidden;
 }
@@ -28,23 +28,23 @@ body {
     position: relative;
     z-index: 10;
     width: 100%;
-    max-width: 250px; /* MADE MUCH SMALLER */
+    max-width: 250px; 
 }
 
 /* Glass-morphism - fully square and compact */
 .glass-card {
-    background: rgba(15, 23, 42, 0.2);
+    background: rgba(15, 23, 42, 0.4); /* Slightly darker for better visibility against image */
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 20px 15px; /* Tighter spacing inside */
+    padding: 20px 15px; 
     border-radius: 0px; /* STRICTLY SQUARE */
     text-align: center;
     box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
 
 h1 {
-    font-size: 20px; /* Smaller font */
+    font-size: 20px; 
     font-weight: 800;
     background: linear-gradient(to right, #60a5fa, #a78bfa);
     -webkit-background-clip: text;
@@ -101,7 +101,7 @@ input {
 /* Control Grid */
 .control-grid {
     display: grid;
-    gap: 10px; /* Buttons closer together */
+    gap: 10px; 
 }
 
 .control-item {
