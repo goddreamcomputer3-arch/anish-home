@@ -6,9 +6,16 @@
 }
 
 body {
+    /* --- USER-PROVIDED BACKGROUND IMAGE --- */
+    background: url("image_0.png") center / cover no-repeat fixed;
+    /* ------------------------------------ */
+
+    /* --- COMMENTED OUT OLD ANIMATED BACKGROUND ---
     background: linear-gradient(-45deg, #0f172a, #1e1b4b, #312e81, #020617);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
+    ------------------------------------------- */
+
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -18,14 +25,13 @@ body {
     position: relative;
 }
 
-/* Background Animation Keyframes */
+/* --- COMMENTED OUT OLD BACKGROUND ANIMATIONS AND ORBS ---
 @keyframes gradientBG {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* Floating Orbs */
 .orb {
     position: absolute;
     border-radius: 50%;
@@ -67,8 +73,9 @@ body {
     0% { transform: translateY(0px) scale(1); }
     100% { transform: translateY(-50px) scale(1.1); }
 }
+----------------------------------------------------------- */
 
-/* Main Container */
+/* Main Container - Ensuring it is on top of the background */
 .container {
     position: relative;
     z-index: 10;
@@ -77,6 +84,7 @@ body {
     padding: 20px;
 }
 
+/* Glass-morphism effect will now work beautifully with the image */
 .glass-card {
     background: rgba(15, 23, 42, 0.6);
     backdrop-filter: blur(24px);
@@ -191,7 +199,7 @@ input:focus {
 
 .power-btn:hover { background: rgba(255,255,255,0.05); }
 
-/* The 'ON' State */
+/* The 'ON' State with a slight glow on the glass surface */
 .power-btn.on {
     background: rgba(16, 185, 129, 0.1);
     border-color: rgba(52, 211, 153, 0.5);
