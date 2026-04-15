@@ -16,8 +16,7 @@ body {
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: flex-end; /* Pushes to bottom */
-    padding-bottom: 30px; 
+    align-items: center; /* THIS CENTERS IT VERTICALLY */
     color: #ffffff;
     overflow: hidden;
 }
@@ -27,13 +26,13 @@ body {
     position: relative;
     z-index: 10;
     width: 100%;
-    max-width: 250px; /* Small size */
+    max-width: 250px; /* Keeps the panel small */
 }
 
 /* Glass-morphism - fully square and compact */
 .glass-card {
-    background: rgba(15, 23, 42, 0.4); 
-    backdrop-filter: blur(8px);
+    background: rgba(15, 23, 42, 0.7); 
+    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.15);
     padding: 20px 15px;
@@ -118,7 +117,7 @@ input[type="email"], input[type="password"] {
     margin-bottom: 10px;
 }
 
-/* --- TOGGLE SWITCH CSS (NOW ROUND) --- */
+/* --- TOGGLE SWITCH CSS (ROUND) --- */
 .switch {
     position: relative;
     display: inline-block;
@@ -141,7 +140,7 @@ input[type="email"], input[type="password"] {
     bottom: 0;
     background-color: #ef4444; /* RED when OFF */
     transition: .4s;
-    border-radius: 24px; /* Makes the outside of the switch round */
+    border-radius: 24px;
 }
 
 .slider:before {
@@ -153,12 +152,12 @@ input[type="email"], input[type="password"] {
     bottom: 3px;
     background-color: white;
     transition: .4s;
-    border-radius: 50%; /* Makes the inner button a perfect circle */
+    border-radius: 50%;
 }
 
 /* When checked (ON), change background to Green */
 input:checked + .slider {
-    background-color: #10b981; /* GREEN when ON */
+    background-color: #10b981;
 }
 
 /* Move the block to the right when ON */
