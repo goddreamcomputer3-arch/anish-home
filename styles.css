@@ -7,7 +7,7 @@
 
 body {
     background-color: #1e2a44; 
-    background-image: url("image_0.png");
+    background-image: url("5720.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -32,12 +32,12 @@ body {
 
 /* Glass-morphism - fully square and compact */
 .glass-card {
-    background: rgba(15, 23, 42, 0.4); /* Made slightly darker so text is readable */
+    background: rgba(15, 23, 42, 0.4); 
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.15);
     padding: 20px 15px;
-    border-radius: 0px; /* Square */
+    border-radius: 0px; /* Square panel */
     text-align: center;
     box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
@@ -118,7 +118,7 @@ input[type="email"], input[type="password"] {
     margin-bottom: 10px;
 }
 
-/* --- TOGGLE SWITCH CSS --- */
+/* --- TOGGLE SWITCH CSS (NOW ROUND) --- */
 .switch {
     position: relative;
     display: inline-block;
@@ -141,7 +141,7 @@ input[type="email"], input[type="password"] {
     bottom: 0;
     background-color: #ef4444; /* RED when OFF */
     transition: .4s;
-    border-radius: 0px; /* Square switch */
+    border-radius: 24px; /* Makes the outside of the switch round */
 }
 
 .slider:before {
@@ -153,7 +153,7 @@ input[type="email"], input[type="password"] {
     bottom: 3px;
     background-color: white;
     transition: .4s;
-    border-radius: 0px; /* Square slider block */
+    border-radius: 50%; /* Makes the inner button a perfect circle */
 }
 
 /* When checked (ON), change background to Green */
