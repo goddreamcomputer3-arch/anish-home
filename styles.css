@@ -6,9 +6,8 @@
 }
 
 body {
-    /* Background Image Setup */
     background-color: #1e2a44; 
-    background-image: url("image_0.png"); /* Updated image filename */
+    background-image: url("image_0.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -17,34 +16,34 @@ body {
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: flex-end; 
-    padding-bottom: 80px; /* INCREASED from 30px to move the panel UP */
+    align-items: flex-end; /* Pushes to bottom */
+    padding-bottom: 30px; 
     color: #ffffff;
     overflow: hidden;
 }
 
-/* Much smaller container */
+/* Container */
 .container {
     position: relative;
     z-index: 10;
     width: 100%;
-    max-width: 250px; 
+    max-width: 250px; /* Small size */
 }
 
 /* Glass-morphism - fully square and compact */
 .glass-card {
-    background: rgba(15, 23, 42, 0.4); /* Slightly darker for better visibility against image */
+    background: rgba(15, 23, 42, 0.4); /* Made slightly darker so text is readable */
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 20px 15px; 
-    border-radius: 0px; /* STRICTLY SQUARE */
+    padding: 20px 15px;
+    border-radius: 0px; /* Square */
     text-align: center;
     box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
 
 h1 {
-    font-size: 20px; 
+    font-size: 20px;
     font-weight: 800;
     background: linear-gradient(to right, #60a5fa, #a78bfa);
     -webkit-background-clip: text;
@@ -60,7 +59,6 @@ h1 {
     margin-bottom: 15px;
 }
 
-/* Status Badge - Square */
 .status-badge {
     font-size: 10px;
     padding: 4px 10px;
@@ -73,8 +71,7 @@ h1 {
 .online { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); }
 .offline { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(248, 113, 113, 0.3); }
 
-/* Inputs - Square and thin */
-input {
+input[type="email"], input[type="password"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -101,51 +98,86 @@ input {
 /* Control Grid */
 .control-grid {
     display: grid;
-    gap: 10px; 
+    gap: 10px;
 }
 
 .control-item {
-    background: rgba(255,255,255,0.02);
-    border-radius: 0px;
-    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 0px; /* Square */
+    padding: 12px;
     border: 1px solid rgba(255,255,255,0.05);
-}
-
-/* Power Buttons - Square and compact */
-.power-btn {
-    width: 100%;
-    padding: 8px;
-    border-radius: 0px;
-    background: rgba(0,0,0,0.5);
-    border: 1px solid transparent;
-    color: #cbd5e1;
-    cursor: pointer;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
-    font-size: 14px;
-    font-weight: 600;
 }
 
-.power-btn.on {
-    background: rgba(16, 185, 129, 0.15);
-    border-color: rgba(52, 211, 153, 0.6);
-    color: #fff;
+.device-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #e2e8f0;
+    margin-bottom: 10px;
 }
+
+/* --- TOGGLE SWITCH CSS --- */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ef4444; /* RED when OFF */
+    transition: .4s;
+    border-radius: 0px; /* Square switch */
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 0px; /* Square slider block */
+}
+
+/* When checked (ON), change background to Green */
+input:checked + .slider {
+    background-color: #10b981; /* GREEN when ON */
+}
+
+/* Move the block to the right when ON */
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+/* ------------------------- */
 
 .status-text {
-    font-size: 10px;
-    margin-top: 8px;
+    font-size: 11px;
+    margin-top: 10px;
     font-weight: 700;
-    color: #64748b;
 }
 
 .logout-link {
     background: none;
     border: none;
     color: #f87171;
-    margin-top: 15px;
+    margin-top: 10px;
     cursor: pointer;
     font-size: 11px;
     font-weight: bold;
