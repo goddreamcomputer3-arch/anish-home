@@ -17,31 +17,34 @@ const auth = getAuth();
 const db = getDatabase(app);
 const dbPath = "board1/outputs/digital";
 
-// Update the visual state
+// Update the visual state (moves the switch and changes text)
 function updateUI(pin, value) {
-    const btn = document.getElementById("btn" + pin);
+    const toggle = document.getElementById("toggle" + pin);
     const status = document.getElementById("status" + pin);
-    if (!btn || !status) return;
+    if (!toggle || !status) return;
 
     if (value === 1) {
-        btn.classList.add("on");
-        status.innerText = "System: ACTIVE";
-        status.style.color = "#2ecc71";
+        toggle.checked = true; // Slides switch to ON
+        status.innerText = "ON";
+        status.style.color = "#10b981"; // Green text
     } else {
-        btn.classList.remove("on");
-        status.innerText = "System: IDLE";
-        status.style.color = "#e74c3c";
+        toggle.checked = false; // Slides switch to OFF
+        status.innerText = "OFF";
+        status.style.color = "#ef4444"; // Red text
     }
 }
 
-// Button Click Handling
+// Logic for clicking the toggle switches
 [2, 21, 22].forEach(pin => {
-    const btn = document.getElementById("btn" + pin);
-    btn.onclick = () => {
-        const isNowOn = btn.classList.contains("on");
-        set(ref(db, `${dbPath}/${pin}`), isNowOn ? 0 : 1);
+    const toggle = document.getElementById("toggle" + pin);
+    
+    toggle.onchange = (e) => {
+        // e.target.checked returns true if ON, false if OFF
+        const isNowOn = e.target.checked;
+        set(ref(db, `${dbPath}/${pin}`), isNowOn ? 1 : 0);
     };
 
+    // Watch for changes in Firebase (if another device turns it on)
     onValue(ref(db, `${dbPath}/${pin}`), (snapshot) => {
         updateUI(pin, snapshot.val());
     });
@@ -61,5 +64,5 @@ onAuthStateChanged(auth, (user) => {
     document.getElementById("controlBox").style.display = user ? "grid" : "none";
     const badge = document.getElementById("statusBadge");
     badge.className = user ? "status-badge online" : "status-badge offline";
-    badge.innerText = user ? "Dashboard Active" : "System Locked";
+    badge.innerText = user ? "Online" : "Offline";
 });
