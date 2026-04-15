@@ -8,54 +8,50 @@
     <script type="module" src="app.js"></script>
 </head>
 <body>
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-
     <div class="container">
         <div class="glass-card">
             <header>
                 <h1>Device Control</h1>
                 <p class="subtitle">By Anish</p>
-                <div id="statusBadge" class="status-badge offline">System Offline</div>
+                <div id="statusBadge" class="status-badge offline">Offline</div>
             </header>
 
             <div id="authBox" class="auth-container">
-                <div class="input-group">
-                    <input id="emailField" type="email" placeholder="Email Address">
-                </div>
-                <div class="input-group">
-                    <input id="passwordField" type="password" placeholder="Password">
-                </div>
-                <button id="loginBtn" class="main-btn">Access System</button>
+                <input id="emailField" type="email" placeholder="Email Address">
+                <input id="passwordField" type="password" placeholder="Password">
+                <button id="loginBtn" class="main-btn">Login</button>
             </div>
 
             <div id="controlBox" class="control-grid" style="display:none;">
+                
                 <div class="control-item">
-                    <button id="btn2" class="power-btn">
-                        <span class="icon">💡</span>
-                        <span class="label">Main LED</span>
-                    </button>
+                    <div class="device-title">💡 Main LED</div>
+                    <label class="switch">
+                        <input type="checkbox" id="toggle2">
+                        <span class="slider"></span>
+                    </label>
                     <p id="status2" class="status-text">OFF</p>
                 </div>
 
                 <div class="control-item">
-                    <button id="btn21" class="power-btn">
-                        <span class="icon">💡</span>
-                        <span class="label">Device 1</span>
-                    </button>
+                    <div class="device-title">🔌 Device 1</div>
+                    <label class="switch">
+                        <input type="checkbox" id="toggle21">
+                        <span class="slider"></span>
+                    </label>
                     <p id="status21" class="status-text">OFF</p>
                 </div>
 
                 <div class="control-item">
-                    <button id="btn22" class="power-btn">
-                        <span class="icon">⚙️</span>
-                        <span class="label">Fan</span>
-                    </button>
+                    <div class="device-title">⚙️ Device 2</div>
+                    <label class="switch">
+                        <input type="checkbox" id="toggle22">
+                        <span class="slider"></span>
+                    </label>
                     <p id="status22" class="status-text">OFF</p>
                 </div>
 
-                <button id="logoutBtn" class="logout-link">Disconnect System</button>
+                <button id="logoutBtn" class="logout-link">Logout</button>
             </div>
         </div>
     </div>
